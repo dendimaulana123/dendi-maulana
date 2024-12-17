@@ -1,0 +1,207 @@
+/* General reset and body styling */
+body {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FFFFFF; /* Background yang cerah */
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden; /* Menghilangkan scroll horizontal */
+}
+
+/* Header styling */
+header {
+    text-align: center;
+    background-color: #3498DB; /* Modern blue background */
+    color: #FFF;
+    padding: 40px 20px;
+    border-bottom: 4px solid #2980B9; /* Semantic blue accent */
+    animation: fadeInDown 1s ease-out; /* Animasi masuk header */
+}
+
+/* Profile picture styling */
+.profile-picture {
+    border-radius: 0; /* Ubah dari border-radius: 50% agar menjadi kotak */
+    width: 200px; /* Foto 4x6 kotak */
+    height: 300px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 5px solid #2980B9; /* Border matching the accent color */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Shadow untuk efek 3D */
+    animation: zoomIn 1s ease-in-out; /* Animasi masuk foto */
+}
+
+/* Main content styling */
+main {
+    padding: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Section styling */
+section {
+    margin-bottom: 40px;
+    padding: 25px;
+    background-color: #FFF;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease-in-out;
+    animation: slideInUp 1s ease-in-out; /* Animasi masuk section */
+    position: relative;
+}
+
+section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('background-image.jpg') no-repeat center center/cover; /* Parallax effect background */
+    z-index: -1;
+    opacity: 0.3; /* Mengaburkan background */
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* Shadow lebih dalam pada hover */
+}
+
+/* Headings */
+h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 700;
+    animation: fadeIn 1s ease-in-out; /* Animasi muncul judul */
+}
+
+h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #2C3E50;
+    animation: fadeIn 1s ease-in-out; /* Animasi muncul judul */
+}
+
+/* Unordered lists */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #555;
+    animation: fadeIn 1s ease-in-out; /* Animasi muncul daftar */
+}
+
+ul li i {
+    color: #3498DB; /* Accent color for icons */
+    margin-right: 10px;
+}
+
+/* Columns */
+.columns {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.column {
+    flex: 1;
+    min-width: 220px;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    animation: fadeInUp 1s ease-in-out; /* Animasi masuk kolom */
+}
+
+.column:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Shadow lebih dalam pada hover */
+    transform: translateY(-5px) scale(1.05); /* Wobble effect pada hover */
+}
+
+/* Contact styling */
+.contact p, .contact ul {
+    font-size: 18px;
+    color: #555;
+    animation: fadeIn 1s ease-in-out; /* Animasi muncul konten kontak */
+}
+
+.contact a {
+    color: #3498DB; /* Link color matching the semantic blue */
+    text-decoration: none;
+    animation: fadeIn 1s ease-in-out; /* Animasi muncul link kontak */
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #3498DB; /* Dark background to match header */
+    color: #FFF;
+    font-size: 16px;
+    animation: fadeInUp 1s ease-in-out; /* Animasi masuk footer */
+}
+
+/* Animasi */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes wobble {
+    0% { transform: translateX(0); }
+    15% { transform: translateX(-10px); }
+    30% { transform: translateX(10px); }
+    45% { transform: translateX(-10px); }
+    60% { transform: translateX(10px); }
+    75% { transform: translateX(-10px); }
+    100% { transform: translateX(0); }
+}
